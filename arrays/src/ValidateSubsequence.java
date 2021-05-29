@@ -12,7 +12,17 @@ public class ValidateSubsequence {
 
     public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
 
-        return false;
+        int pointA = 0;
+        int pointS = 0;
+
+        while (pointA < array.size() && pointS < sequence.size() && pointS != sequence.size()) {
+            if (array.get(pointA).equals(sequence.get(pointS))) {
+                pointS++;
+            }
+            pointA++;
+        }
+
+        return pointS == sequence.size();
     }
 
 }
