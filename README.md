@@ -1,2 +1,2 @@
 # algo-program
-where I commit my solved codes
+>where I commit my solved codes
