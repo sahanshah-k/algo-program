@@ -7,6 +7,17 @@ class Solution {
     Step 4 : reverse from i + 1 index to length - 1 
     
     Step 4 should be done in all the cases
+    
+    
+    It will be always in increasing order from the left, find the breaking point.
+    [1 3] [5 4 2]
+    find the next first half,
+    it will be [1 4]
+    ie the next largest element in the second half, traverse from right end.
+    swap [1 4] [5 3 2]
+    reverse second half
+    
+    1 4 2 3 5
     */
     
     
