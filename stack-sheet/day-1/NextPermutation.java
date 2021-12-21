@@ -1,6 +1,9 @@
 class Solution {
     
     /*
+    
+    https://leetcode.com/problems/next-permutation/
+    
     Step 1 : traverse from right find first index, ie i where a[i] < a[i + 1]
     Step 2 : traverse from right find the second index j where a[j] > a[i]
     Step 3 : swap i and j
