@@ -15,4 +15,5 @@ class Solution {
         }
         return c;
     }
+    //step [n] = step [n - 1] + step[n - 2]
 }
