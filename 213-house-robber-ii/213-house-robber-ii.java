@@ -16,7 +16,8 @@ class Solution {
         int secondMax = solve(second, second.length - 1, dp);
     
         
-        return Math.max(firstMax, secondMax);
+        // return Math.max(firstMax, secondMax);
+        return Math.max(solveTab(first), solveTab(second));
         
         //if first value is passing then last value should be skipped
         //if last value is passing then first value should be skipped
@@ -38,5 +39,18 @@ class Solution {
         
         dp[n] = Math.max(incl, excl);
         return dp[n];
+    }
+    
+    private int solveTab(int[] nums) {
+        int[] dp = new int[nums.length];
+        
+        dp[0] = nums[0];
+        
+        for (int i = 1; i < nums.length; i ++) {
+            int incl = i >= 2 ? dp[i - 2] + nums[i] : nums[i];
+            int excl = dp[i - 1] + 0;
+            dp[i] = Math.max(incl, excl);
+        }
+        return dp[nums.length - 1];
     }
 }
