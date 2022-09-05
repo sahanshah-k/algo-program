@@ -1,37 +1,27 @@
 class Solution {
     public int rob(int[] nums) {
         int n = nums.length;
-        int[] inclDp = new int[nums.length];
-        Arrays.fill(inclDp, -1);
-        int[] exclDp = new int[nums.length];
-        Arrays.fill(exclDp, -1);
-        return solve(nums, n - 1, inclDp, exclDp);
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, -1);
+        return solve(nums, n - 1, dp);
     }
     
-    private int solve(int[] nums, int n, int[] inclDp, int[] exclDp) {
+    private int solve(int[] nums, int n, int[] dp) {
         if (n < 0) {
             return 0;
         } 
         if (n == 0) {
             return nums[0];
         }
-        int incl = 0;
-        if (inclDp[n] == -1) {
-            incl = solve(nums, n - 2, inclDp, exclDp) + nums[n];
-            inclDp[n] = incl;
-        } else {
-            incl = inclDp[n];
+        if (dp[n] != -1) {
+            return dp[n];
         }
+        int incl = solve(nums, n - 2, dp) + nums[n];        
+        int excl = solve(nums, n - 1, dp) + 0;
         
-        int excl = 0;
-        if (exclDp[n] == -1) {
-            excl = solve(nums, n - 1, inclDp, exclDp) + 0;
-            exclDp[n] = excl;   
-        } else {
-            excl = exclDp[n];
-        }
+        dp[n] = Math.max(incl, excl);
         
-        return Math.max(incl, excl);
+        return dp[n];
         
     }
 }
