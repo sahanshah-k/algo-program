@@ -8,8 +8,9 @@ class Solution {
     private boolean solve1(int[] nums) {
         int toJumpX = nums.length - 1;
         for (int i = nums.length - 2; i >= 0; i --) {
-            if (nums[i] >= (toJumpX - i)) {
-                toJumpX -= toJumpX - i;
+            int diff = toJumpX - i;
+            if (nums[i] >= diff) {
+                toJumpX = toJumpX - diff;
             }
         }
         return toJumpX == 0;
