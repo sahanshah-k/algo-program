@@ -27,11 +27,7 @@ class Solution {
         
         if (node.left == null && node.right == null) {
             curr.add(node.val);
-            int sum = 0;
-            for (int number : curr){
-                sum += number;        
-            }
-            if (sum == targetSum) {
+            if (node.val == targetSum) {
                 out.add(new ArrayList<Integer>(curr));
             }
             curr.remove(curr.size() - 1);
@@ -39,12 +35,12 @@ class Solution {
         
         if (node.left != null) {
             curr.add(node.val);
-            traverse(node.left, targetSum, out, curr);        
+            traverse(node.left, targetSum - node.val, out, curr);        
         }
         
         if (node.right != null) {
             curr.add(node.val);
-            traverse(node.right, targetSum, out, curr);
+            traverse(node.right, targetSum - node.val, out, curr);
         }
         if (curr.size() > 0) {
             curr.remove(curr.size() - 1);
