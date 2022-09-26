@@ -12,9 +12,8 @@ class Solution {
                 int v1 = findParent(eq.charAt(0) - 'a', parent);
                 int v2 = findParent(eq.charAt(3) - 'a', parent);
                 
-                if (v1 != v2) {
                     parent[v2] = v1; 
-                }
+                
             }
         }
         
