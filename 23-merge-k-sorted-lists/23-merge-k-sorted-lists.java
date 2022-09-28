@@ -10,9 +10,6 @@
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists == null) {
-            return null;
-        }
         ListNode dummy = new ListNode(0);
         ListNode sol = dummy;
         while (true) {
