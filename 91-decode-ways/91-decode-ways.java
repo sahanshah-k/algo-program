@@ -7,6 +7,7 @@ class Solution {
     }
     
     private int helper(String s, int pos, int[] dp) {
+        System.out.println(Arrays.toString(dp));
         
         if (dp[pos] != -1) {
             return dp[pos];
