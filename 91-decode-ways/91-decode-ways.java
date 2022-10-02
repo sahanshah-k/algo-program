@@ -1,6 +1,6 @@
 class Solution {
     
-    public int numDecodings(String s) {
+    public int numDecodings1(String s) {
         int[] dp = new int[s.length() + 1];
         Arrays.fill(dp, -1);
         return helper(s, 0, dp);
@@ -31,6 +31,26 @@ class Solution {
             dp[pos] = helper(s, pos + 1, dp);
         }            
         return dp[pos];
+    }
+    
+    public int numDecodings(String s) {
+        int[] dp = new int[s.length() + 1];
+        dp[s.length()] = 1;
+        dp[s.length() - 1] = s.charAt(s.length() - 1) == '0' ? 0 : 1;
+        
+        for (int i = s.length() - 2; i >= 0; i --) {
+            if (s.charAt(i) == '0') {
+                dp[i] = 0;
+            } else {
+                int t = (s.charAt(i) - '0') * 10 + (s.charAt(i + 1) - '0');
+                if (t <= 26) {
+                    dp[i] = dp[i + 1] + dp[i + 2];
+                } else {
+                    dp[i] = dp[i + 1];
+                }
+            }
+        }
+        return dp[0];
     }
     
 }
