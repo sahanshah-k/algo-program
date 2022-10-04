@@ -6,7 +6,7 @@ class Solution {
         while (p2 < s.length()) {
             map.put(s.charAt(p2), map.getOrDefault(s.charAt(p2), 0) + 1);
             while ((p2 - p1 + 1) - Collections.max(map.values()) > k) {
-                map.put(s.charAt(p1), map.getOrDefault(s.charAt(p1), 1) - 1);
+                map.put(s.charAt(p1), map.get(s.charAt(p1)) - 1);
                 p1 ++;
             }
             outMax = Math.max(outMax, p2 - p1 + 1);
