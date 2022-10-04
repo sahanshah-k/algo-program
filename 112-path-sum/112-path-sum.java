@@ -27,7 +27,6 @@ class Solution {
         if (root.left == null && root.right == null) {
             return targetSum - root.val == 0;
         }
-
         
         return helper(root.left, targetSum - root.val) 
             || helper(root.right, targetSum - root.val);
