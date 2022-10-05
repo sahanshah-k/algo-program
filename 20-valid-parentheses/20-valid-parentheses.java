@@ -8,14 +8,15 @@ class Solution {
         Stack<Character> stack = new Stack<>();
         
         for (int i = 0; i < s.length(); i ++) {
-            if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[') {
-                stack.push(s.charAt(i));
+            Character ch = s.charAt(i);
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
             } else {
                 if (stack.isEmpty()) {
                     return false;
                 }
                 Character popped = stack.pop();
-                if (popped != map.get(s.charAt(i))) {
+                if (popped != map.get(ch)) {
                     return false;
                 }
             }
