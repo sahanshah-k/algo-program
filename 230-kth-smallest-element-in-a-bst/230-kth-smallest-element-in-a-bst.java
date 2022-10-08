@@ -36,17 +36,20 @@ class Solution {
     //inorder traversal of bst will be in increasing order;
     public int kthSmallest(TreeNode root, int k) {
         ArrayList<Integer> arr = new ArrayList<>();
-        helper(root, arr);
+        helper(root, arr, k);
         return arr.get(k - 1);
     }
     
-    void helper(TreeNode root, ArrayList<Integer> arr) {
+    void helper(TreeNode root, ArrayList<Integer> arr, int k) {
         if (root == null) {
             return;
         }
-        helper(root.left, arr);
+        helper(root.left, arr, k);
         arr.add(root.val);
-        helper(root.right, arr);
+        if (arr.size() == k) {
+            return;
+        }
+        helper(root.right, arr, k);
     }
     
 }
