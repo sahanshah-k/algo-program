@@ -36,8 +36,8 @@ class WordDictionary {
         return dfs(curr, 0, word);
     }
     
-    public boolean dfs(TrieNode curr, int k, String word) {
-        for (int i = k; i < word.length(); i ++) {
+    public boolean dfs(TrieNode curr, int i, String word) {
+        for (; i < word.length(); i ++) {
             int v = word.charAt(i) - 'a';
             if (v == -51) {
                 for (int j = 0; j < 26; j ++) {
