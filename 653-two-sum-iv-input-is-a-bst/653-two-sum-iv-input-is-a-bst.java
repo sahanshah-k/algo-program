@@ -17,7 +17,6 @@ class Solution {
     public boolean findTarget(TreeNode root, int k) {
         HashSet<Integer> set = new HashSet<>();
         return helper(root, set, k);
-        //return true;
     }
     
     private boolean helper(TreeNode root, HashSet<Integer> set, int k) {
