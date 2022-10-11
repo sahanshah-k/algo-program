@@ -7,9 +7,6 @@ class Solution {
             } else if (n <= big) {
                 big = n;
             } else if (n >= big && n >= small) {
-                System.out.println(small);
-                System.out.println(big);
-                System.out.println(n);
                 return true;
             }
         }
