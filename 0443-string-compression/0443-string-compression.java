@@ -6,7 +6,6 @@ class Solution {
             if (chars[i - 1] != chars[i]) {
                 chars[k++] = chars[i - 1];
                 if (currentCount > 1) {
-                    //chars[k++] = (char) (currentCount + '0');
                     k += setDigit(chars, k, currentCount);
                 }
                 currentCount = 0;
@@ -16,7 +15,6 @@ class Solution {
         
         chars[k++] = chars[chars.length - 1];
         if (currentCount > 1) {
-            //chars[k++] = (char) (currentCount + '0');
             k += setDigit(chars, k, currentCount);
         }
         return k;
