@@ -21,10 +21,25 @@ class Solution {
     }
     
     private int setDigit(char[] chars, int k, int num) {
-        String t = String.valueOf(num);
-        for (int i = 0; i < t.length(); i ++, k ++) {
-            chars[k] = t.charAt(i);
+        
+        
+        int len = (int) (Math.log10(num) + 1);  
+        int temp = len;
+        while (len > 0) {
+            int p = (int) Math.pow(10, len - 1);
+            int q = num / p;
+            //System.out.println(num);
+            chars[k] = (char) (q + '0');
+            k ++;
+            num = num % p;
+            len --;
         }
-        return t.length();
+        
+        // String t = String.valueOf(num);
+        // for (int i = 0; i < t.length(); i ++, k ++) {
+        //     chars[k] = t.charAt(i);
+        // }
+        // return t.length();
+        return temp;
     }
 }
