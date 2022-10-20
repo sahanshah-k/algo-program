@@ -5,6 +5,6 @@ class Solution {
         String[] x = new String[] {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] i = new String[] {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
         
-        return m[num/1000] + c[(num%1000)/100] + x[((num%1000)%100)/10] + i[((num%1000)%100)%10];
+        return m[num/1000] + c[(num%1000)/100] + x[(num%100)/10] + i[num%10];
     }
 }
