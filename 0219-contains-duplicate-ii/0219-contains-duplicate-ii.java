@@ -22,7 +22,6 @@ class Solution {
             if (index != null && Math.abs(index - i) <= k) {
                 return true;
             }
-            System.out.println(index);
         }
         return false;
     }
