@@ -3,10 +3,8 @@ class Solution {
         if (s.isEmpty()) {
             return true;
         }
-        
-        int p1 = 0;
-        int p2 = 0;
-        while (p1 < s.length() && p2 < t.length()) {
+        int p1 = 0, p2 = 0;
+        while (p2 < t.length()) {
             char c1 = s.charAt(p1);
             char c2 = t.charAt(p2);
             if (c1 == c2) {
