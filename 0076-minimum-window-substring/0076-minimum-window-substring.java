@@ -113,10 +113,10 @@ class Solution {
             }
             
             while (p1 <= p2 && currentLength == requiredLength) {
-                if (p2 - p1 + 1 < res[2]) {
+                if (p2 - p1 < res[2]) {
                     res[0] = p1;
                     res[1] = p2;
-                    res[2] = p2 - p1 + 1;
+                    res[2] = p2 - p1;
                 }
                 char c1 = s.charAt(p1);
                 currentMap.put(c1, currentMap.getOrDefault(c1, 1) - 1);
