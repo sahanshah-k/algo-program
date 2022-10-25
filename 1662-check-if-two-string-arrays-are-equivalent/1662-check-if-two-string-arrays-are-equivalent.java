@@ -5,8 +5,9 @@ class Solution {
             if (word1[s1].charAt(c1) != word2[s2].charAt(c2)) {
                 return false;
             }
-            c1 ++;
-            c2 ++;
+            c1 = c1 + 1;
+            
+            c2 = c2 + 1;
             if (c1 == word1[s1].length()) {
                 c1 = 0;
                 s1 ++;
