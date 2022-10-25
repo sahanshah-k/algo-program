@@ -6,7 +6,6 @@ class Solution {
                 return false;
             }
             c1 = c1 + 1;
-            
             c2 = c2 + 1;
             if (c1 == word1[s1].length()) {
                 c1 = 0;
