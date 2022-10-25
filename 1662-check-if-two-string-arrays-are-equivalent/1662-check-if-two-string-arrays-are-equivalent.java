@@ -5,11 +5,11 @@ class Solution {
             if (word1[s1].charAt(c1 ++) != word2[s2].charAt(c2 ++)) {
                 return false;
             }
-            if (c1 >= word1[s1].length()) {
+            if (c1 == word1[s1].length()) {
                 c1 = 0;
                 s1 ++;
             }
-            if (c2 >= word2[s2].length()) {
+            if (c2 == word2[s2].length()) {
                 c2 = 0;
                 s2 ++;
             }
