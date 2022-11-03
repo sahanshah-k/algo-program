@@ -25,6 +25,9 @@ class Solution {
             }
             
         }
-        return count*2 + (mid ? 2 : 0);
+        if (mid) {
+            count ++;
+        }
+        return count * 2;
     }
 }
