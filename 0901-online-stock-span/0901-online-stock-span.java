@@ -1,5 +1,5 @@
 class StockSpanner {
-    
+    //Monotonic decreasing stack
     private Stack<int[]> stack;
 
     public StockSpanner() {
